@@ -475,7 +475,7 @@ mpg %>%
   select(drv)
 ```
 
-`recode()`, like `group_by()`, `summarize()`, and the other dplyr functions, quotes its input. We therefore need to tell `recode()` to evaluate `recode_key` immediately. Let's try `!!`.
+`recode()`, like `group_by()`, `summarize()`, and the other dplyr functions, quotes its input. We therefore need to tell `recode()` to evaluate `drv_recode` immediately. Let's try `!!`.
 
 ```{r, error=TRUE}
 mpg %>% 
@@ -483,7 +483,7 @@ mpg %>%
   select(drv)
 ```
 
-`!!` doesn't work because `recode_key` is a vector. Not only do we need to immediately evaluate `recode_key`, we also need to unpack its contents. To do so, we'll use `!!!`.
+`!!` doesn't work because `drv_recode` is a vector. Not only do we need to immediately evaluate `drv_recode`, we also need to unpack its contents. To do so, we'll use `!!!`.
 
 ```{r}
 mpg %>% 
